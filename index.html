@@ -1,30 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>RSP by rsp</title>
+    <meta name="viewport" content="width=640">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>RSP by rsp</title>
   </head>
+
   <body>
-    <div class="wrapper">
+    <a id="forkme_banner" href="https://github.com/rsp">View on GitHub</a>
+    <div class="shell">
+
       <header>
-        <h1>RSP</h1>
-        <p>Fixing code for fun and profit</p>
-        <p class="view"><a href="https://github.com/rsp">View the Project on GitHub <small>rsp</small></a></p>
-        <ul>
-          <li class="single"><a href="https://github.com/rsp/rsp.github.com">View On <strong>GitHub</strong></a></li>
-        </ul>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>RSP</h1>
+            <h2>Fixing code for fun and profit</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
       </header>
-      <section>
+
+      <div id="no-downloads">
+        <span class="inner">
+        </span>
+      </div>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
         <h2>
 <a id="rafał-pocztarski" class="anchor" href="#rafa%C5%82-pocztarski" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rafał Pocztarski</h2>
 
@@ -75,11 +95,21 @@
 
 <p>My name "Rafał" is spelled with <a href="https://en.wikipedia.org/wiki/%C5%81">latin "L" with stroke</a> (<a href="http://www.fileformat.info/info/unicode/char/142/">Unicode: U+0142</a>) but if you spell it with just plain "L" I won't take offense. It is a Polish equivalent of the name Raphael.</p>
       </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>Projects by <a href="https://github.com/rsp">rsp</a> can be found on <a href="https://github.com/rsp">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
     </div>
-    <footer>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
