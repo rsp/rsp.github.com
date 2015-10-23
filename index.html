@@ -1,100 +1,418 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang=en>
+<head>
+  <meta charset=utf-8>
+  <title>Rafał Pocztarski</title>
+  <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+  <link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- <link rel=stylesheet href="elusive/css/elusive-icons.min.css"> -->
+  <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:400,100,300&subset=latin,latin-ext">
+<style>
+div.icon-o {
+  display: inline-block;
+  border: 1px solid red;
+}
+div.icon-o>.icon {
+  display: inline-block;
+  position: absolute;
+}
+div.icon-o, div.icon-o>.icon {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+div.icon-o>.icon-w {
+  opacity: 1;
+}
+div.icon-o>.icon-c {
+  opacity: 0;
+  transition: opacity 2s;
+}
+div.icon-o>.icon-c:hover {
+  opacity: 1;
+}
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Rafał Pocztarski : Fixing code for fun and profit">
+.circle-icon {
+    background: #ffc0c0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 100px;
+    vertical-align: middle;
+    padding: 30px;
+}
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
-    <title>Rafał Pocztarski</title>
-  </head>
+.top-out, .top-bg, .top-content {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+}
+.top-bg, .top-content {
+  position: absolute;
+}
+.top-bg {
+  background-size: cover;
+  /*background-attachment: fixed;*/
+  background-position: center;
+}
 
-  <body>
+.top-bg-1{
+  /*background-color: #8a8a8a;*/
+  background-color: #000;
+}
+.top-bg-2 {
+  background-image: url(zkbm-1500x840-gb-256-bw-mq50.jpg);
+  opacity: 0;
+}
+.top-bg-3 {
+  background-image: url(zkbm-1500x840-gb-64-bw-mq50.jpg);
+  opacity: 0;
+}
+.top-bg-4 {
+  background-image: url(zkbm-1500x840-sgp-64-32-bw-mq70.jpg);
+  opacity: 0;
+}
+.top-bg-5 {
+  background-image: url(zkbm-1500x840-sgp-64-32-mq70-ss420.jpg);
+  opacity: 0;
+}
+.top-bg-6 {
+  background-image: url(zkbm-1500x840-mq70-ss420.jpg);
+  opacity: 0;
+}
+.top-bg-2.bg-visible {
+  opacity: 1;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/rsp">View on GitHub</a>
+.grv-o {
+  position: relative;
+  /*padding: 20px;*/
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+.grv {
+  position: absolute;
+  border-radius: 100%;
+  border-width: 2px;
+  border-style: solid;
+  width: 100px;
+  height: 100px;
+}
+.grv-w {
+  opacity: 0;
+   border-color: rgba(255,255,255,0.5);
+   transition: border-color 0.5s;
+}
+.grv-o:hover .grv-w {
+  border-color: rgba(255,255,255,1);
+}
+.grv-c {
+  opacity: 0;
+  border-color: rgba(255,255,255,0.5);
+  transition: opacity 10s, border-color 0.5s;
+}
+.grv-o:hover .grv-c {
+  opacity: 1;
+  border-color: rgba(255,255,255,1);
+}
+.gh-o {
+  padding: 20px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.gh-i {
+  font-size: 100px;
+  color: rgba(255,255,255,0.5);
+  border: 1px solid white;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+}
 
-          <h1 id="project_title">Rafał Pocztarski</h1>
-          <h2 id="project_tagline">Fixing code for fun and profit</h2>
 
-        </header>
+.igrv-o {
+  /*position: relative;*/
+  display: inline-block;
+  /*padding: 20px;*/
+  width: 100px;
+  height: 100px;
+}
+/** {
+  padding: 0px;
+  margin: 0px;
+}*/
+
+.igrv-o {
+  display: inline-block;
+  position: relative;
+}
+.igrv {
+  position: absolute;
+  border-radius: 100%;
+  border-width: 2px;
+  border-style: solid;
+  width: 100px;
+  height: 100px;
+}
+.igrv-w {
+  opacity: 0;
+   border-color: rgba(255,255,255,0.5);
+   transition: border-color 0.5s;
+}
+.igrv-o:hover .igrv-w {
+  border-color: rgba(255,255,255,1);
+}
+.igrv-c {
+  opacity: 0;
+  border-color: rgba(255,255,255,0.5);
+  transition: opacity 10s, border-color 0.5s;
+}
+.igrv-o:hover .igrv-c {
+  opacity: 1;
+  border-color: rgba(255,255,255,1);
+}
+
+
+
+.top-content {
+    display: table;
+    width: 100%;
+    height: 100%;
+    /*padding: 100px 0;*/
+    text-align: center;
+    color: #fff;
+}
+.top-content .name {
+    display: table-cell;
+    vertical-align: middle;
+    /*position: fixed;*/
+    width: 100%;
+    opacity: 0;
+}
+.top-content a {
+  color: rgba(255,255,255,1);
+  opacity: 0.5;
+  /*background-color: rgba(255,0,0,0);*/
+  /*transition: opacity 1s, background-color 3s;*/
+  transition: opacity 1s;
+}
+.top-content a:hover {
+  opacity: 1;
+  /*background-color: rgba(255,0,0,1);*/
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  /*font-family: "Helvetica Narrow","Arial Narrow",Tahoma,Arial,Helvetica,sans-serif;*/
+}
+h1 {
+  font-weight: 100;
+}
+h2 {
+  font-weight: 300;
+}
+h3 {
+  font-weight: 400;
+}
+.foot {
+  text-align: center;
+}
+
+
+.Zjgrv-o {
+  display: inline-block;
+  position: relative;
+}
+.Zjgrv {
+  position: absolute;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+}
+
+.jgrv-o {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -100px;
+}
+
+.jgrv {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+}
+.name {
+  /*margin-top: 200px;*/
+}
+.kgrv {
+    border-color: rgba(255,255,255,0.5);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 100%;
+}
+.kgrv-c {
+  margin-left: -204px;
+  transition: opacity linear 10s;
+  opacity: 0;
+}
+.kgrv-c.kgrv-v {
+  opacity: 1;
+}
+@media (max-width: 600px) {
+.kgrv {
+  width: 100px;
+  height: 100px;
+}
+.kgrv-c {
+  margin-left: -104px;
+}
+h1 {
+  margin-top: 0px;
+}
+h2 {
+  font-size: 32px;
+}
+}
+@media (max-height: 600px) {
+.kgrv {
+  width: 100px;
+  height: 100px;
+}
+.kgrv-c {
+  margin-left: -104px;
+}
+h1 {
+  margin-top: 0px;
+}
+h2 {
+  margin-top: 0px;
+  font-size: 32px;
+}
+}
+@media (max-height: 400px) {
+  h1 {
+    margin-bottom: 0px;
+  }
+}
+@media (max-height: 300px) {
+  h2 {
+    margin-bottom: 0px;
+  }
+}
+
+.soc {
+  font-size: 52px;
+}
+</style>
+
+</head>
+<body style="font-size: 28px; background: #444">
+
+<!-- <div class="header">
+  <div class="grv-o">
+    <img class="grv grv-w" src="rsp-gravatar-s800-red-tr-200.png">
+    <img class="grv grv-c" src="rsp-gravatar-s800-200-bq95.jpg">
+  </div>
+  <div class="gh-o">
+    <div class="gh-i">
+    <i class="fa fa-github"></i>    
     </div>
+  </div>
+</div>
+ -->
+<div class="top-out">
+<div class="top-bg top-bg-1"></div>
+<div class="top-bg top-bg-2"></div>
+<div class="top-bg top-bg-3"></div>
+<div class="top-bg top-bg-4"></div>
+<div class="top-bg top-bg-5"></div>
+<div class="top-bg top-bg-6"></div>
+<div class="top-content">
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h2>
-<a id="rafał-pocztarski" class="anchor" href="#rafa%C5%82-pocztarski" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rafał Pocztarski</h2>
+  <!-- <div class="jgrv-o">
+    <img class="jgrv jgrv-w" src="rsp-gravatar-s800-red-tr-200.png">
+    <img class="jgrv jgrv-c" src="rsp-gravatar-s800-200-bq95.jpg">
+  </div>
+ -->
+<div class="name">
 
-<p><a href="https://twitter.com/pocztarski">twitter</a> · <a href="https://www.linkedin.com/in/pocztarski">linkedin</a> · <a href="http://codepen.io/rsp/">codepen</a> · <a href="https://www.gittip.com/rsp/">gittip</a> · <a href="https://careers.stackoverflow.com/rsp">résumé</a> · <a href="https://plus.google.com/106457556668508404492/about">g+</a> · <a href="https://en.wikipedia.org/wiki/User:Rfl">wp</a> · <a href="https://medium.com/@pocztarski">medium</a> · <a href="https://ello.co/pocztarski">ello</a> · <a href="https://about.me/pocztarski">about.me</a><br><a href="https://stackexchange.com/users/303952/rsp"><img src="https://stackexchange.com/users/flair/303952.png" alt="My Stack Exchange flair"></a></p>
+  <!-- <div class="igrv-o">
+    <img class="igrv igrv-w" src="rsp-gravatar-s800-red-tr-200.png">
+    <img class="igrv igrv-c" src="rsp-gravatar-s800-200-bq95.jpg">
+  </div> -->
+  
+  <img class="kgrv kgrv-w" src="rsp-gravatar-s800-red-tr-200.png"><img
+  class="kgrv kgrv-c" src="rsp-gravatar-s800-200-bq95.jpg">
+  
+  <h1>Rafał Pocztarski</h1>
+  <h2>Node.js - JavaScript - Web Development</h2>
+  <div class="soc">
+  <a href="https://twitter.com/pocztarski" target="_blank"><i class="fa fa-twitter"></i></a>
+  <a href="https://medium.com/@pocztarski" target="_blank"><i class="fa fa-medium"></i></a>
+  <a href="https://www.facebook.com/pocztarski" target="_blank"><i class="fa fa-facebook"></i></a>
 
-<p>Fixing code for fun and profit – always looking forward to fix programs that are broken in new, interesting and creative ways.</p>
+  <a href="https://www.linkedin.com/in/pocztarski" target="_blank"><i class="fa fa-linkedin"></i></a>
+  <a href="https://angel.co/pocztarski" target="_blank"><i class="fa fa-angellist"></i></a>
 
-<h2>
-<a id="find-me-online" class="anchor" href="#find-me-online" aria-hidden="true"><span class="octicon octicon-link"></span></a>Find me online</h2>
+  <a href="https://www.flickr.com/photos/pocztarski/" target="_blank"><i class="fa fa-flickr"></i></a>
+  <a href="https://codepen.io/rsp/" target="_blank"><i class="fa fa-codepen"></i></a>
+  <a href="https://github.com/rsp" target="_blank"><i class="fa fa-github"></i></a>
+  
+  <a href="https://stackexchange.com/users/303952/rsp" target="_blank"><i class="fa fa-stack-exchange"></i></a>
+  <a href="https://stackoverflow.com/users/613198/rsp" target="_blank"><i class="fa fa-stack-overflow"></i></a>
 
-<ul>
-<li><strong><a href="https://twitter.com/pocztarski">twitter.com/pocztarski</a> (follow me!)</strong></li>
-<li><strong><a href="https://www.linkedin.com/in/pocztarski">linkedin.com/in/pocztarski</a> (connect and endorse my skills!)</strong></li>
-<li>
-<a href="https://plus.google.com/106457556668508404492">plus.google.com/106457556668508404492</a> (not sure what it's for)</li>
-<li>
-<a href="http://codepen.io/rsp/">codepen.io/rsp</a> (simple demos of JavaScript, HTML5, CSS3)</li>
-<li>
-<a href="https://github.com/rsp">github.com/rsp</a> (some contributions to open-source projects)</li>
-<li>
-<a href="https://www.npmjs.com/%7Ersp">npmjs.com/~rsp</a> (Node.js/io.js modules)</li>
-<li>
-<a href="https://en.wikipedia.org/wiki/user:rfl">en.wikipedia.org/wiki/user:rfl</a> (administrator since 2004)</li>
-<li>
-<a href="https://www.gittip.com/rsp/">gittip.com/rsp</a> (for tips)</li>
-<li>
-<a href="https://careers.stackoverflow.com/rsp">careers.stackoverflow.com/rsp</a> (for work)</li>
-</ul>
+  </div>
+</div>
+</div>
+</div>
 
-<h3>
-<a id="profiles-on-stack-exchange" class="anchor" href="#profiles-on-stack-exchange" aria-hidden="true"><span class="octicon octicon-link"></span></a>Profiles on Stack Exchange:</h3>
-
-<ul>
-<li>
-<a href="https://stackoverflow.com/users/613198/">stackoverflow.com/users/613198</a> (270+ answers, 12k+ reputation)</li>
-<li><a href="https://superuser.com/users/160960/">superuser.com/users/160960</a></li>
-<li><a href="https://programmers.stackexchange.com/users/18691/">programmers.stackexchange.com/users/18691</a></li>
-<li><a href="https://webmasters.stackexchange.com/users/18617/">webmasters.stackexchange.com/users/18617</a></li>
-<li><a href="https://unix.stackexchange.com/users/23774/">unix.stackexchange.com/users/23774</a></li>
-<li><a href="https://askubuntu.com/users/11582/">askubuntu.com/users/11582</a></li>
-<li><a href="https://math.stackexchange.com/users/65499/">math.stackexchange.com/users/65499</a></li>
-</ul>
-
-<h2>
-<a id="my-name" class="anchor" href="#my-name" aria-hidden="true"><span class="octicon octicon-link"></span></a>My name</h2>
-
-<p>My name "Rafał" is spelled with <a href="https://en.wikipedia.org/wiki/%C5%81">latin "L" with stroke</a> (<a href="http://www.fileformat.info/info/unicode/char/142/">Unicode: U+0142</a>) but if you spell it with just plain "L" I won't take offense. It is a Polish equivalent of the name Raphael.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-35668915-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+<div class="foot">
+  Copyright &copy; 2015 Rafał Pocztarski
+</div>
 
 
-  </body>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+
+function fbg(n, d, c) {
+  return function () {
+    $('.top-bg-' + n).animate({opacity:1}, d, 'linear', c);
+  };
+}
+function to(n, c) {
+  setTimeout(c, n);
+}
+// fbg(2, 300, fbg(3, 1000, fbg(4, 1000, fbg(5, 2000, fbg(6, 2000))))) ();
+fbg(4, 200, to(2000, fbg(5, 4000, fbg(6, 2000)))) ();
+
+setTimeout(function () {
+  $('.name').animate({opacity:1}, 1000, 'swing', function () {
+    // $('.grv-w').animate({opacity:1}, 2000, 'linear');
+    $('.kgrv-c').animate({opacity:1}, 10000, 'linear');
+    // $('.kgrv-c').addClass('kgrv-v');
+  });
+},300);
+
+});
+
+</script>
+
+</body>
 </html>
